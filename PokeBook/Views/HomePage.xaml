@@ -8,7 +8,13 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto">
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Click="IncrementClick" HorizontalAlignment="Center" Padding="10" Margin="10"></Button>
+        <ListView ItemsSource="{x:Bind ViewModel.Pokemon}" Grid.Row="1"></ListView>
 
     </Grid>
 </Page>
