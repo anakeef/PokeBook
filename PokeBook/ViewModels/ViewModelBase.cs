@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace PokeBook.ViewModels
 {
     public abstract class ViewModelBase : INotifyPropertyChanged
     {
+
         public event PropertyChangedEventHandler PropertyChanged;
 
-    }
 
-    protected void OnPropetyChanged([CallerMemberName] string proptertyName = null)
-    {
-        PropertyChanged?.Invoke(this, new PropetyChangedEventArgs(propertyName));
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
+        }
     }
 }
